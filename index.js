@@ -1,35 +1,34 @@
-function getHistory() {
+ const getHistory = () => {
   return document.getElementById("history-value").innerText;
 }
 
-function printHistory(num) {
+const printHistory = (num) => {
   document.getElementById("history-value").innerText = num;
 }
 
-function getOutput() {
+const getOutput = () => {
   return document.getElementById("output-value").innerText;
 }
 
-function printOutput(num) {
+const printOutput = (num) => {
   if (num == "") {
     document.getElementById("output-value").innerText = num;
   } else {
-    document.getElementById(
-      "output-value"
-    ).innerText = getFormattedNumber = num;
+    document.getElementById("output-value").innerText = getFormattedNumber(num);
   }
 }
 
-function getFormattedNumber(num) {
+const getFormattedNumber = (num) => {
   if (num == "-") {
     return "";
   }
+  console.log(num);
   let n = Number(num);
   let value = n.toLocaleString("en");
   return value;
 }
 
-function reverseNumberFormat(num) {
+const reverseNumberFormat = (num) => {
   return Number(num.replace(/,/g, ""));
 }
 
